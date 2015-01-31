@@ -16,7 +16,7 @@ protocol CenterViewControllerDelegate {
     optional func collapseSidePanels()
 }
 
-class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
+class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate {
 
     @IBOutlet weak var imgBackground: UIImageView!
     
@@ -24,29 +24,52 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var lblEmail: UILabel!
     @IBOutlet weak var btnAdd: UIButton!
-    @IBOutlet weak var segmentControl: UISegmentedControl!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var orgTableView: UITableView!
+    @IBOutlet weak var notificationTableView: UITableView!
     @IBOutlet weak var loadingInd: UIActivityIndicatorView!
     @IBOutlet weak var loadingLbl: UIButton!
     @IBOutlet weak var imgUser: UIImageView!
+    
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     
     var ownersList = [String: [NSObject : AnyObject] ]()
     var subscriberList = [String: [NSObject : AnyObject] ]()
 
+    var tempNotification = [String: [NSObject : AnyObject] ]()
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.scrollView.contentSize = self.containerView.frame.size
 
         
-        //segmrnted control default selection
-        self.segmentControl.setEnabled(true, forSegmentAtIndex: 0)
+
+         // temp loaded data
+            self.tempNotification = [
+                "Not1" : ["title":"Notification1", "desc":"do some thing 1"],
+                "Not2" : ["title":"Notification2", "desc":"do some thing 2"],
+                "Not3" : ["title":"Notification3", "desc":"do some thing 3"],
+                "Not4" : ["title":"Notification4", "desc":"do some thing 4"],
+                "Not5" : ["title":"Notification5", "desc":"do some thing 5"],
+                "Not6" : ["title":"Notification6", "desc":"do some thing 6"],
+                "Not7" : ["title":"Notification7", "desc":"do some thing 7"],
+                "Not8" : ["title":"Notification8", "desc":"do some thing 8"],
+                "Not9" : ["title":"Notification9", "desc":"do some thing 9"],
+                "Not10" : ["title":"Notification10", "desc":"do some thing 10"],
+                "Not11" : ["title":"Notification11", "desc":"do some thing 11"]]
+      
 
         
         // table view configurations
-        self.tableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
-        self.tableView.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+        self.orgTableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
+        self.orgTableView.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+        
+        self.notificationTableView.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
+        self.notificationTableView.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
         
         //self.navigationController?.navigationBar.backgroundColor = UIColor.greenColor()
         self.navigationItem.titleView = imgBarLogo
@@ -84,12 +107,16 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         if loginUser == nil {
             loginUser = User(ref: "", uID: "shezi", email: "shahzadscs@gmail.com", firstName: "Shahzad", lastName: "Soomro", status: "pending")
         }
+        
             loginUser?.asynGetSubscriberOrgs({ (orgList) -> Void in
                 if orgList != nil {
                     
                     self.subscriberList = orgList!
-                    self.tableView.reloadData()
+                    self.orgTableView.reloadData()
                     
+                    
+                    self.notificationTableView.reloadData()
+
                     // stop and hide the loading indicators
                     self.loadingInd.stopAnimating()
                     self.loadingLbl.hidden = true
@@ -101,7 +128,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
                 
                 if orgList != nil {
                     self.ownersList = orgList!
-                    self.tableView.reloadData()
+                    self.orgTableView.reloadData()
                     
                     
                     // stop and hide the loading indicators
@@ -137,51 +164,54 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //select orgs segment
-        if self.segmentControl.selectedSegmentIndex == 0 {
-            return self.ownersList.keys.array.count
+        if tableView == self.orgTableView {
+            return self.ownersList.keys.array.count + self.subscriberList.keys.array.count
         }
-        
-        //select subscriber segment
-        else if self.segmentControl.selectedSegmentIndex == 1 {
-            return self.subscriberList.keys.array.count
+        else if tableView == self.notificationTableView{
+            return self.tempNotification.keys.array.count
         }
         
         return 0
+        
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if segmentControl.selectedSegmentIndex == 0 {
-            
-          //  performSegueWithIdentifier("teamSeg", sender: self.ownersList.keys.array[indexPath.row])
-        }
-        else if segmentControl.selectedSegmentIndex == 1 {
-            performSegueWithIdentifier("teamSeg", sender: self.subscriberList.keys.array[indexPath.row])
-        }
+
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        
-        //select orgs segment
-        if self.segmentControl.selectedSegmentIndex == 0 {
-            cell.textLabel?.text = self.ownersList.values.array[indexPath.row]["title"] as NSString
-            cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row]["desc"] as NSString
 
+        // if orgs TableView comes
+        if tableView == self.orgTableView {
+            if indexPath.row < self.ownersList.keys.array.count {
+                cell.textLabel?.text = self.ownersList.values.array[indexPath.row]["title"] as NSString
+                cell.detailTextLabel?.text = self.ownersList.values.array[indexPath.row]["desc"] as NSString
+            }
+            else {
+                let tempIndexRow = indexPath.row - self.ownersList.keys.array.count
+                
+                cell.textLabel?.text = self.subscriberList.values.array[tempIndexRow]["title"] as NSString
+                cell.detailTextLabel?.text = self.subscriberList.values.array[tempIndexRow]["desc"] as NSString
+            }
+        }
+        
+        // if notification TableView comes
+        else if tableView == self.notificationTableView{
+            
+                cell.textLabel?.text = self.tempNotification.values.array[indexPath.row]["title"] as NSString
+                cell.detailTextLabel?.text = self.tempNotification.values.array[indexPath.row]["desc"] as NSString
+            
         }
             
-            //select subscriber segment
-        else if self.segmentControl.selectedSegmentIndex == 1 {
-            cell.textLabel?.text = self.subscriberList.values.array[indexPath.row]["title"] as NSString
-            cell.detailTextLabel?.text = self.subscriberList.values.array[indexPath.row]["desc"] as NSString
-        }
-        
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
         
-        cell.imageView?.layer.cornerRadius = 25
-        cell.imageView?.layer.masksToBounds = true
+        // for image to round shape
+//        cell.imageView?.layer.cornerRadius = 25
+//        cell.imageView?.layer.masksToBounds = true
         
 
         return cell
@@ -244,31 +274,19 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate {
         delegate?.toggleRightPanel!()
     }
     
-    @IBAction func segmentControl(segment: UISegmentedControl) {
-        if segment.selectedSegmentIndex == 0 {
-            self.tableView.hidden = false
-            self.btnAdd.setTitle("Add Org", forState: UIControlState.Normal)
-            self.tableView.reloadData()
-        }
-        else if segment.selectedSegmentIndex == 1 {
-            self.tableView.hidden = false
-            self.btnAdd.setTitle("Subscribe Org", forState: UIControlState.Normal)
-            self.tableView.reloadData()
-        }
+    
+    @IBAction func addOrg(sender: AnyObject) {
         
+            performSegueWithIdentifier("addOrgSeg", sender: self)
+
     }
     
-    @IBAction func addTeam(sender: AnyObject) {
+    @IBAction func subcOrg(sender: AnyObject) {
         
-        if segmentControl.selectedSegmentIndex == 0 {
-
-            performSegueWithIdentifier("addOrgSeg", sender: self)
-        }
-        else if segmentControl.selectedSegmentIndex == 1 {
-            // func to subscribe org
-             subscribeOrg()
-        }
+        // func to subscribe org
+        subscribeOrg()
     }
+    
 
 
 }
