@@ -9,11 +9,24 @@
 /* Begin PBXBuildFile section */
 		421CDD6C1A7CE34100C58C02 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDD6B1A7CE34100C58C02 /* AppDelegate.swift */; };
 		421CDD6F1A7CE34100C58C02 /* PanaCloud_Wow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 421CDD6D1A7CE34100C58C02 /* PanaCloud_Wow.xcdatamodeld */; };
-		421CDD711A7CE34100C58C02 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDD701A7CE34100C58C02 /* ViewController.swift */; };
 		421CDD741A7CE34100C58C02 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421CDD721A7CE34100C58C02 /* Main.storyboard */; };
 		421CDD761A7CE34100C58C02 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421CDD751A7CE34100C58C02 /* Images.xcassets */; };
 		421CDD791A7CE34100C58C02 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 421CDD771A7CE34100C58C02 /* LaunchScreen.xib */; };
 		421CDD851A7CE34100C58C02 /* PanaCloud_WowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDD841A7CE34100C58C02 /* PanaCloud_WowTests.swift */; };
+		421CDD8F1A7CEAA700C58C02 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421CDD8E1A7CEAA700C58C02 /* Firebase.framework */; };
+		421CDD911A7CEAF000C58C02 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421CDD901A7CEAF000C58C02 /* SystemConfiguration.framework */; };
+		421CDD931A7CEAF800C58C02 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421CDD921A7CEAF800C58C02 /* Security.framework */; };
+		421CDD951A7CECDC00C58C02 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 421CDD941A7CECDC00C58C02 /* QuartzCore.framework */; };
+		421CDD971A7CECF600C58C02 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 421CDD961A7CECF600C58C02 /* libc++.dylib */; };
+		421CDD991A7CED0600C58C02 /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 421CDD981A7CED0600C58C02 /* libicucore.dylib */; };
+		421CDD9F1A7CF7FD00C58C02 /* TestStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421CDD9E1A7CF7FD00C58C02 /* TestStoryboard.storyboard */; };
+		421CDDA21A7CF81600C58C02 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDA01A7CF81600C58C02 /* ContainerViewController.swift */; };
+		421CDDA31A7CF81600C58C02 /* SidePanelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDA11A7CF81600C58C02 /* SidePanelViewController.swift */; };
+		421CDDA51A7CF82C00C58C02 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDA41A7CF82C00C58C02 /* HomeVC.swift */; };
+		421CDDA71A7CF8B800C58C02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDA61A7CF8B800C58C02 /* Constants.swift */; };
+		421CDDAA1A7CF8EC00C58C02 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDA91A7CF8EC00C58C02 /* Model.swift */; };
+		421CDDAC1A7CFA5300C58C02 /* AddOrgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDAB1A7CFA5300C58C02 /* AddOrgVC.swift */; };
+		421CDDAE1A7CFAD100C58C02 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDAD1A7CFAD100C58C02 /* PreferencesVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +44,27 @@
 		421CDD6A1A7CE34100C58C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421CDD6B1A7CE34100C58C02 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		421CDD6E1A7CE34100C58C02 /* PanaCloud_Wow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PanaCloud_Wow.xcdatamodel; sourceTree = "<group>"; };
-		421CDD701A7CE34100C58C02 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		421CDD731A7CE34100C58C02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		421CDD751A7CE34100C58C02 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		421CDD781A7CE34100C58C02 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		421CDD7E1A7CE34100C58C02 /* PanaCloud WowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PanaCloud WowTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		421CDD831A7CE34100C58C02 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421CDD841A7CE34100C58C02 /* PanaCloud_WowTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanaCloud_WowTests.swift; sourceTree = "<group>"; };
+		421CDD8E1A7CEAA700C58C02 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		421CDD901A7CEAF000C58C02 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		421CDD921A7CEAF800C58C02 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		421CDD941A7CECDC00C58C02 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		421CDD961A7CECF600C58C02 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
+		421CDD981A7CED0600C58C02 /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		421CDD9A1A7CED1900C58C02 /* PanaCloud Wow-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PanaCloud Wow-Bridging-Header.h"; sourceTree = "<group>"; };
+		421CDD9E1A7CF7FD00C58C02 /* TestStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TestStoryboard.storyboard; sourceTree = "<group>"; };
+		421CDDA01A7CF81600C58C02 /* ContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		421CDDA11A7CF81600C58C02 /* SidePanelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidePanelViewController.swift; sourceTree = "<group>"; };
+		421CDDA41A7CF82C00C58C02 /* HomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		421CDDA61A7CF8B800C58C02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		421CDDA91A7CF8EC00C58C02 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		421CDDAB1A7CFA5300C58C02 /* AddOrgVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrgVC.swift; sourceTree = "<group>"; };
+		421CDDAD1A7CFAD100C58C02 /* PreferencesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +72,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421CDD991A7CED0600C58C02 /* libicucore.dylib in Frameworks */,
+				421CDD971A7CECF600C58C02 /* libc++.dylib in Frameworks */,
+				421CDD951A7CECDC00C58C02 /* QuartzCore.framework in Frameworks */,
+				421CDD931A7CEAF800C58C02 /* Security.framework in Frameworks */,
+				421CDD911A7CEAF000C58C02 /* SystemConfiguration.framework in Frameworks */,
+				421CDD8F1A7CEAA700C58C02 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +94,7 @@
 		421CDD5D1A7CE34100C58C02 = {
 			isa = PBXGroup;
 			children = (
+				421CDD9D1A7CED7B00C58C02 /* Framework */,
 				421CDD681A7CE34100C58C02 /* PanaCloud Wow */,
 				421CDD811A7CE34100C58C02 /* PanaCloud WowTests */,
 				421CDD671A7CE34100C58C02 /* Products */,
@@ -80,12 +114,19 @@
 			isa = PBXGroup;
 			children = (
 				421CDD6B1A7CE34100C58C02 /* AppDelegate.swift */,
-				421CDD701A7CE34100C58C02 /* ViewController.swift */,
+				421CDDA41A7CF82C00C58C02 /* HomeVC.swift */,
+				421CDDAB1A7CFA5300C58C02 /* AddOrgVC.swift */,
+				421CDDAD1A7CFAD100C58C02 /* PreferencesVC.swift */,
+				421CDDA11A7CF81600C58C02 /* SidePanelViewController.swift */,
+				421CDDA01A7CF81600C58C02 /* ContainerViewController.swift */,
 				421CDD721A7CE34100C58C02 /* Main.storyboard */,
+				421CDD9E1A7CF7FD00C58C02 /* TestStoryboard.storyboard */,
 				421CDD751A7CE34100C58C02 /* Images.xcassets */,
 				421CDD771A7CE34100C58C02 /* LaunchScreen.xib */,
 				421CDD6D1A7CE34100C58C02 /* PanaCloud_Wow.xcdatamodeld */,
+				421CDDA81A7CF8BE00C58C02 /* Model and Constants */,
 				421CDD691A7CE34100C58C02 /* Supporting Files */,
+				421CDD9A1A7CED1900C58C02 /* PanaCloud Wow-Bridging-Header.h */,
 			);
 			path = "PanaCloud Wow";
 			sourceTree = "<group>";
@@ -113,6 +154,28 @@
 				421CDD831A7CE34100C58C02 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		421CDD9D1A7CED7B00C58C02 /* Framework */ = {
+			isa = PBXGroup;
+			children = (
+				421CDD981A7CED0600C58C02 /* libicucore.dylib */,
+				421CDD961A7CECF600C58C02 /* libc++.dylib */,
+				421CDD941A7CECDC00C58C02 /* QuartzCore.framework */,
+				421CDD921A7CEAF800C58C02 /* Security.framework */,
+				421CDD901A7CEAF000C58C02 /* SystemConfiguration.framework */,
+				421CDD8E1A7CEAA700C58C02 /* Firebase.framework */,
+			);
+			name = Framework;
+			sourceTree = "<group>";
+		};
+		421CDDA81A7CF8BE00C58C02 /* Model and Constants */ = {
+			isa = PBXGroup;
+			children = (
+				421CDDA91A7CF8EC00C58C02 /* Model.swift */,
+				421CDDA61A7CF8B800C58C02 /* Constants.swift */,
+			);
+			name = "Model and Constants";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				421CDD741A7CE34100C58C02 /* Main.storyboard in Resources */,
+				421CDD9F1A7CF7FD00C58C02 /* TestStoryboard.storyboard in Resources */,
 				421CDD791A7CE34100C58C02 /* LaunchScreen.xib in Resources */,
 				421CDD761A7CE34100C58C02 /* Images.xcassets in Resources */,
 			);
@@ -215,9 +279,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				421CDD711A7CE34100C58C02 /* ViewController.swift in Sources */,
+				421CDDAE1A7CFAD100C58C02 /* PreferencesVC.swift in Sources */,
+				421CDDAA1A7CF8EC00C58C02 /* Model.swift in Sources */,
+				421CDDA31A7CF81600C58C02 /* SidePanelViewController.swift in Sources */,
+				421CDDA51A7CF82C00C58C02 /* HomeVC.swift in Sources */,
+				421CDDAC1A7CFA5300C58C02 /* AddOrgVC.swift in Sources */,
 				421CDD6C1A7CE34100C58C02 /* AppDelegate.swift in Sources */,
+				421CDDA21A7CF81600C58C02 /* ContainerViewController.swift in Sources */,
 				421CDD6F1A7CE34100C58C02 /* PanaCloud_Wow.xcdatamodeld in Sources */,
+				421CDDA71A7CF8B800C58C02 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,9 +410,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "PanaCloud Wow/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PanaCloud Wow/PanaCloud Wow-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +429,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = "PanaCloud Wow/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PanaCloud Wow/PanaCloud Wow-Bridging-Header.h";
 			};
 			name = Release;
 		};
