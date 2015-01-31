@@ -27,6 +27,7 @@
 		421CDDAA1A7CF8EC00C58C02 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDA91A7CF8EC00C58C02 /* Model.swift */; };
 		421CDDAC1A7CFA5300C58C02 /* AddOrgVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDAB1A7CFA5300C58C02 /* AddOrgVC.swift */; };
 		421CDDAE1A7CFAD100C58C02 /* PreferencesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421CDDAD1A7CFAD100C58C02 /* PreferencesVC.swift */; };
+		42E818F21A7D343400A850C4 /* userCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E818F11A7D343400A850C4 /* userCheckIn.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		421CDDA91A7CF8EC00C58C02 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		421CDDAB1A7CFA5300C58C02 /* AddOrgVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddOrgVC.swift; sourceTree = "<group>"; };
 		421CDDAD1A7CFAD100C58C02 /* PreferencesVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesVC.swift; sourceTree = "<group>"; };
+		42E818F11A7D343400A850C4 /* userCheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = userCheckIn.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				421CDDAD1A7CFAD100C58C02 /* PreferencesVC.swift */,
 				421CDDA11A7CF81600C58C02 /* SidePanelViewController.swift */,
 				421CDDA01A7CF81600C58C02 /* ContainerViewController.swift */,
+				42E818F11A7D343400A850C4 /* userCheckIn.swift */,
 				421CDD721A7CE34100C58C02 /* Main.storyboard */,
 				421CDD9E1A7CF7FD00C58C02 /* TestStoryboard.storyboard */,
 				421CDD751A7CE34100C58C02 /* Images.xcassets */,
@@ -279,6 +282,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42E818F21A7D343400A850C4 /* userCheckIn.swift in Sources */,
 				421CDDAE1A7CFAD100C58C02 /* PreferencesVC.swift in Sources */,
 				421CDDAA1A7CF8EC00C58C02 /* Model.swift in Sources */,
 				421CDDA31A7CF81600C58C02 /* SidePanelViewController.swift in Sources */,
@@ -496,6 +500,7 @@
 				421CDD8A1A7CE34100C58C02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		421CDD8B1A7CE34100C58C02 /* Build configuration list for PBXNativeTarget "PanaCloud WowTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +509,7 @@
 				421CDD8D1A7CE34100C58C02 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

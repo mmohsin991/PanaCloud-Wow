@@ -46,22 +46,6 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
         
         self.scrollView.contentSize = self.containerView.frame.size
 
-        
-
-         // temp loaded data
-            self.tempNotification = [
-                "Not1" : ["title":"Notification1", "desc":"do some thing 1"],
-                "Not2" : ["title":"Notification2", "desc":"do some thing 2"],
-                "Not3" : ["title":"Notification3", "desc":"do some thing 3"],
-                "Not4" : ["title":"Notification4", "desc":"do some thing 4"],
-                "Not5" : ["title":"Notification5", "desc":"do some thing 5"],
-                "Not6" : ["title":"Notification6", "desc":"do some thing 6"],
-                "Not7" : ["title":"Notification7", "desc":"do some thing 7"],
-                "Not8" : ["title":"Notification8", "desc":"do some thing 8"],
-                "Not9" : ["title":"Notification9", "desc":"do some thing 9"],
-                "Not10" : ["title":"Notification10", "desc":"do some thing 10"],
-                "Not11" : ["title":"Notification11", "desc":"do some thing 11"]]
-      
 
         
         // table view configurations
@@ -114,9 +98,23 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
                     self.subscriberList = orgList!
                     self.orgTableView.reloadData()
                     
+                    // temp loaded data
+                    self.tempNotification = [
+                        "Not1" : ["title":"Notification1", "desc":"do some thing 1"],
+                        "Not2" : ["title":"Notification2", "desc":"do some thing 2"],
+                        "Not3" : ["title":"Notification3", "desc":"do some thing 3"],
+                        "Not4" : ["title":"Notification4", "desc":"do some thing 4"],
+                        "Not5" : ["title":"Notification5", "desc":"do some thing 5"],
+                        "Not6" : ["title":"Notification6", "desc":"do some thing 6"],
+                        "Not7" : ["title":"Notification7", "desc":"do some thing 7"],
+                        "Not8" : ["title":"Notification8", "desc":"do some thing 8"],
+                        "Not9" : ["title":"Notification9", "desc":"do some thing 9"],
+                        "Not10" : ["title":"Notification10", "desc":"do some thing 10"],
+                        "Not11" : ["title":"Notification11", "desc":"do some thing 11"]]
                     
                     self.notificationTableView.reloadData()
 
+                    
                     // stop and hide the loading indicators
                     self.loadingInd.stopAnimating()
                     self.loadingLbl.hidden = true
@@ -196,6 +194,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
                 cell.textLabel?.text = self.subscriberList.values.array[tempIndexRow]["title"] as NSString
                 cell.detailTextLabel?.text = self.subscriberList.values.array[tempIndexRow]["desc"] as NSString
             }
+            
         }
         
         // if notification TableView comes
@@ -208,6 +207,8 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
             
         cell.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.0)
         cell.separatorInset = UIEdgeInsets(top: 0.0, left: 15.0, bottom: 0.0, right: 15.0)
+        cell.textLabel?.textColor = colorLBlue
+
         
         // for image to round shape
 //        cell.imageView?.layer.cornerRadius = 25
@@ -231,6 +232,8 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
 //            desVC.memberTypeWithOrg = self.segmentControl.selectedSegmentIndex
 //            desVC.delegate = self.delegate
 //        }
+        
+        
     }
     
     
@@ -287,6 +290,33 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
         subscribeOrg()
     }
     
+    @IBAction func userCheckIn(sender: AnyObject) {
+        self.performSegueWithIdentifier("userCheckInSeg", sender: self)
+    }
 
+    @IBAction func scrollNotification(sender: UIButton) {
+        
+        // move up side
+        if sender.imageView?.image == UIImage(named: "up") {
+            UIView.transitionWithView(self.containerView, duration: 0.5, options: UIViewAnimationOptions.CurveEaseOut,
+                animations: {
+                    self.containerView.frame = CGRect(x: 0, y: -275, width: 320, height: 843)
+                },
+                completion: {(bool) -> Void in
+                    sender.setImage(UIImage(named: "down"), forState: UIControlState.Normal)
+            })
+        }
+            // move downward
+            else if sender.imageView?.image == UIImage(named: "down") {
+                UIView.transitionWithView(self.containerView, duration: 0.5, options: UIViewAnimationOptions.CurveEaseOut,
+                    animations: {
+                        self.containerView.frame = CGRect(x: 0, y: 0, width: 320, height: 843)
+                    },
+                    completion: {(bool) -> Void in
+                        sender.setImage(UIImage(named: "up"), forState: UIControlState.Normal)
+                })
+            }
+
+    }
 
 }
