@@ -9,6 +9,7 @@
 import UIKit
 
 
+
 @objc
 protocol CenterViewControllerDelegate {
     optional func toggleLeftPanel()
@@ -46,6 +47,7 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
         
         self.scrollView.contentSize = self.containerView.frame.size
 
+        
 
         
         // table view configurations
@@ -316,6 +318,12 @@ class HomeVC: WowUIViewController, UITableViewDataSource, UITableViewDelegate, U
                         sender.setImage(UIImage(named: "up"), forState: UIControlState.Normal)
                 })
             }
+        
+        //        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.3, initialSpringVelocity: 0, options: nil, animations: { () -> Void in
+        //            containerView.layer.transform = CGAffineTransformMakeRotation(M_PI)
+        //        }) { (Bool) -> Void in
+        //            <#code#>
+        //        }
 
     }
 
