@@ -859,4 +859,25 @@ class WowRef {
 }
 
 
+// MARK: New Model
+
+class AsyncObject{
+    
+    private var data = [String : AnyObject]()
+    let ref : Firebase
+    
+    init(ref: Firebase, callBack : (data : [String : AnyObject]) -> Void){
+        self.ref = ref
+        
+        self.ref.observeEventType(FEventType.Value, withBlock: { (snapshot) -> Void in
+            self.data = snapshot.value as [String : AnyObject]
+            callBack(data: self.data)
+        })
+        
+    }
+    
+    
+}
+
+
 
