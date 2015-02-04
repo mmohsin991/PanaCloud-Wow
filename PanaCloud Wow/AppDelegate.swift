@@ -5,7 +5,6 @@
 //  Created by Mohsin on 31/01/2015.
 //  Copyright (c) 2015 PanaCloud. All rights reserved.
 //
-// Master Branch
 
 import UIKit
 import CoreData
