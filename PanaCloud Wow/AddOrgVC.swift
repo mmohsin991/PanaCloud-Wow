@@ -69,18 +69,18 @@ class AddOrgVC: UIViewController, UIScrollViewDelegate {
         //  println(self.scrollView.contentSize)
         
         
-        var team1 = Team(ref: "", orgID: "mohsinTeam4", desc: "omdsoam omdsa", title: "dsafa fdsa", owner: "mmohsin", members:  ["mmohsin" : 1])
-        
-        wowref.asyncCreateOrganization(team1, callBack: { (errorDesc, unRegMembersUIDs) -> Void in
-            if errorDesc == nil {
-                println("org crated")
-                println(unRegMembersUIDs)
-            }
-                
-            else{
-                println(errorDesc)
-            }
-        })
+//        var team1 = Team(ref: "", orgID: "mohsinTeam4", desc: "omdsoam omdsa", title: "dsafa fdsa", owner: "mmohsin", members:  ["mmohsin" : 1])
+//        
+//        wowref.asyncCreateOrganization(team1, callBack: { (errorDesc, unRegMembersUIDs) -> Void in
+//            if errorDesc == nil {
+//                println("org crated")
+//                println(unRegMembersUIDs)
+//            }
+//                
+//            else{
+//                println(errorDesc)
+//            }
+//        })
         
     }
     
